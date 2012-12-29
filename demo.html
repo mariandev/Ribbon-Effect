@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Ribbon Effect</title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;-webkit-transform: translateZ(0);}
+			form{
+				width: 250px;
+				height: auto;
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				z-index: 100000;
+				background: rgb(255,255,255);font-weight: bold;
+				border-bottom-right-radius: 10px;
+				padding: 10px;
+			}
+				form select,
+				form input{
+					float: right;
+					width: 100px;
+					height: 1.4em;
+				}
+		</style>
+	</head>
+	<body id="body">
+		<script type="text/javascript" src="http://demo.mariandev.eu/demofiles/ribbon-effect/js/ribbon_effect-live-edit.js"></script>
+		<form action="javascript: change_c();">
+			Color schema: <select name="color" id="color">
+				<option value="random">Random</option>
+				<option value="shades">Shades</option>
+				<option value="changeable">Changeable</option>
+				<option value="gradient">Gradient</option>
+			</select><br>
+			Color 1 (gradient): <input type="color" name="color1"><br>
+			Color 2 (gradient): <input type="color" name="color2"><br>
+			Move: <select name="move" id="move">
+				<option value="true">True</option>
+				<option value="">False</option>
+			</select><br>
+			Teleport: <select name="teleport" id="teleport">
+				<option value="true">True</option>
+				<option value="" selected>False</option>
+			</select><br>
+			Mouse: <select name="mouse" id="mouse">
+				<option value="true">True</option>
+				<option value="" selected>False</option>
+			</select><br>
+			Points: <select name="points" id="points">
+				<option value="true">True</option>
+				<option value="">False</option>
+			</select><br>
+			Ribbon: <select name="ribbon" id="ribbon">
+				<option value="true">True</option>
+				<option value="">False</option>
+			</select><br>
+			Speed: <input type="number" id="speed" name="speed" value="3"><br>
+			Points number: <input type="number" id="number" name="number" value="50"><br>
+			<input type="submit" value="Update">
+		</form>
+		<script type="text/javascript">
+
+		</script>
+	</body>
+</html>
+<!-- rgb(232,34,9) -->
