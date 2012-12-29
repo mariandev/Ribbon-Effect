@@ -3,87 +3,33 @@
 		<title>Ribbon Effect</title>
 		<style type="text/css">
 			*{padding: 0;margin: 0;-webkit-transform: translateZ(0);}
-			form{
-				width: 250px;
-				height: auto;
-				position: fixed;
-				left: 0px;
-				top: 0px;
-				z-index: 100000;
-				background: rgb(255,255,255);
-				font-weight: bold;
-				border-bottom-right-radius: 10px;
-				padding: 10px;
-			}
-				form select,
-				form input{
-					float: right;
-					width: 100px;
-					height: 1.4em;
-				}
-			#screenshot{
-				width: 200px;
-				height: 30px;
-				background: rgb(255,255,255);
-				border-top-left-radius: 10px;
-				position: absolute;
-				bottom: 0px;
-				right: 0px;
-				z-index: 100000;
-				text-align: center;
-				border: 2px outset #777777;
-				border-bottom: 0px;
-				border-right: 0px;
-				padding: 5px;
-				font-size: 16px;
-				font-weight: bold;
-				cursor: pointer;
-				-webkit-box-sizing: border-box;
-						box-sizing: border-box;
-			}
-				#screenshot:hover{
-					border: 2px inset #777777;
-					border-bottom: 0px;
-					border-right: 0px;
-				}
 		</style>
 	</head>
 	<body id="body">
-		<script type="text/javascript" src="js/ribbon_effect-live-edit.js"></script>
-		<form action="javascript: change_c();">
-			Color schema: <select name="color" id="color">
-				<option value="random">Random</option>
-				<option value="shades">Shades</option>
-				<option value="changeable">Changeable</option>
-				<option value="gradient">Gradient</option>
-			</select><br>
-			Color 1 (gradient): <input type="color" name="color1"><br>
-			Color 2 (gradient): <input type="color" name="color2"><br>
-			Move: <select name="move" id="move">
-				<option value="true">True</option>
-				<option value="">False</option>
-			</select><br>
-			Teleport: <select name="teleport" id="teleport">
-				<option value="true">True</option>
-				<option value="" selected>False</option>
-			</select><br>
-			Mouse: <select name="mouse" id="mouse">
-				<option value="true">True</option>
-				<option value="" selected>False</option>
-			</select><br>
-			Points: <select name="points" id="points">
-				<option value="true">True</option>
-				<option value="">False</option>
-			</select><br>
-			Ribbon: <select name="ribbon" id="ribbon">
-				<option value="true">True</option>
-				<option value="">False</option>
-			</select><br>
-			Speed: <input type="number" id="speed" name="speed" value="3"><br>
-			Points number: <input type="number" id="number" name="number" value="50"><br>
-			<input type="submit" value="Update">
-		</form>
-		<div id="screenshot">Take a scrennshot!</div>
+		<script type="text/javascript" src="js/ribbon_effect.js"></script>
+		<script type="text/javascript">
+			ribbon_effect({
+				container: 'body',//element id
+				points: {
+					number: 50,
+					color: ['blue','red'], //'random'/'shades'/'changeable'/hex/rgb/rbga/name/gradient[object]
+					move: true,
+					teleport: false,
+					speed: 5
+				},
+				links: {
+					mouse: false,
+					points: true,
+					ribbon: true
+				},
+				canvas: {
+					background: 'black',//random/hex/rgb/rbga/name
+					cursor: true,
+					width: '',//px
+					height: ''//px
+				}
+			});
+		</script>
 	</body>
 </html>
 <!-- rgb(232,34,9) -->
