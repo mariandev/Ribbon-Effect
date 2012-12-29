@@ -146,7 +146,7 @@ function ribbon_effect(session){
 			this.color = 'rgba('+r+','+g+','+b+','+a+')'; //color
 		}else if(c.points.color === 'shades' || c.points.color === 'changeable'){
 			this.hsl = {
-				s:(Math.random()*50+25),
+				s:(Math.random()*50+25), 
 				l: (Math.random()*25+13)
 			};
 			this.sd = 1;
@@ -168,14 +168,30 @@ function ribbon_effect(session){
 		mouse.y = e.clientY;
 		mouse.move = true;
 	});
-	/*window.addEventListener('click',function(e){
+	/*document.getElementById('screenshot').addEventListener('click',function(e){
 		//mouse.increase_link_distance = !mouse.increase_link_distance;
-		c.points.move=!c.points.move;
+		//c.points.move=!c.points.move;
+
+		var dataURL = canvas.toDataURL("image/png");
+		window.open(dataURL, '_blank');
+  		window.focus();
+  		console.log("Screenshot!");
+
+    	//dataURL = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 	});*/
+	$('#screenshot').unbind();
+	$('#screenshot').bind('click',function(){
+		console.log("Screenshot!");
+		var dataURL = canvas.toDataURL("image/png");
+		window.open(dataURL, '_blank');
+  		window.focus();
+	});
 	window.addEventListener('resize',function(e){
 		canvas.width = c.canvas.width = parseInt(document.getElementById(c.container).offsetWidth);
 		canvas.height = c.canvas.height = parseInt(document.getElementById(c.container).offsetHeight);
 	},false);
+
+
 
 	function draw(){
 

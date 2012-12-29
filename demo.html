@@ -10,7 +10,8 @@
 				left: 0px;
 				top: 0px;
 				z-index: 100000;
-				background: rgb(255,255,255);font-weight: bold;
+				background: rgb(255,255,255);
+				font-weight: bold;
 				border-bottom-right-radius: 10px;
 				padding: 10px;
 			}
@@ -20,9 +21,35 @@
 					width: 100px;
 					height: 1.4em;
 				}
+			#screenshot{
+				width: 200px;
+				height: 30px;
+				background: rgb(255,255,255);
+				border-top-left-radius: 10px;
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+				z-index: 100000;
+				text-align: center;
+				border: 2px outset #777777;
+				border-bottom: 0px;
+				border-right: 0px;
+				padding: 5px;
+				font-size: 16px;
+				font-weight: bold;
+				cursor: pointer;
+				-webkit-box-sizing: border-box;
+						box-sizing: border-box;
+			}
+				#screenshot:hover{
+					border: 2px inset #777777;
+					border-bottom: 0px;
+					border-right: 0px;
+				}
 		</style>
 	</head>
 	<body id="body">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="http://demo.mariandev.eu/demofiles/ribbon-effect/js/ribbon_effect-live-edit.js"></script>
 		<form action="javascript: change_c();">
 			Color schema: <select name="color" id="color">
@@ -57,9 +84,7 @@
 			Points number: <input type="number" id="number" name="number" value="50"><br>
 			<input type="submit" value="Update">
 		</form>
-		<script type="text/javascript">
-
-		</script>
+		<div id="screenshot">Take a scrennshot!</div>
 	</body>
 </html>
 <!-- rgb(232,34,9) -->
