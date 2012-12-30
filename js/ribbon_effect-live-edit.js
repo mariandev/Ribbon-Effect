@@ -168,20 +168,13 @@ function ribbon_effect(session){
 		mouse.y = e.clientY;
 		mouse.move = true;
 	});
-	document.getElementById('screenshot').addEventListener('click',function(e){
-		console.log("Screenshot!");
+	function screenshot(){
 		var dataURL = canvas.toDataURL("image/png");
 		window.open(dataURL, '_blank');
   		window.focus();
-
-	});
-	/*$('#screenshot').unbind();
-	$('#screenshot').bind('click',function(){
-		console.log("Screenshot!");
-		var dataURL = canvas.toDataURL("image/png");
-		window.open(dataURL, '_blank');
-  		window.focus();
-	});*/
+	}
+	document.getElementById('screenshot').removeEventListener('click',screenshot);
+	document.getElementById('screenshot').addEventListener('click',screenshot);
 	window.addEventListener('resize',function(e){
 		canvas.width = c.canvas.width = parseInt(document.getElementById(c.container).offsetWidth);
 		canvas.height = c.canvas.height = parseInt(document.getElementById(c.container).offsetHeight);
